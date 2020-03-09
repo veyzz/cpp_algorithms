@@ -18,6 +18,7 @@ struct Stack {
         } else {
             element->prev = head_;
             element->max = std::max(value, head_->max);
+            element->value = value;
             head_ = element;
         }
     }
