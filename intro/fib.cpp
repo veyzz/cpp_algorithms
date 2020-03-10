@@ -4,11 +4,8 @@ int fib_digit(int n) {
     int a = 0;
     int b = 1;
     int c;
-    if (n == 0) {
-        return 0;
-    }
-    if (n == 1) {
-        return 1;
+    if (n == 0 || n == 1) {
+        return n;
     }
     for (int i = 0; i < n - 1; ++i) {
         c = (a + b) % 10;
