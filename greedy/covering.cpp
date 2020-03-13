@@ -3,6 +3,10 @@
 #include <vector>
 
 struct Segment {
+    bool operator<(Segment const & other) {
+        return this->right < other.right;
+    }
+
     Segment intersect(Segment const & another) const {
         Segment temp;
         temp.left = std::max(this->left, another.left);
@@ -17,10 +21,6 @@ struct Segment {
     int right;
 };
 
-bool comp(Segment a, Segment b) {
-  return a.right < b.right;
-}
-
 int main() {
     int n;
     std::cin >> n;
@@ -32,7 +32,7 @@ int main() {
         arr[i] = temp;
     }
 
-    std::sort(arr, arr + n, comp);
+    std::sort(arr, arr + n);
 
     Segment sect;
     for (int i = 0; i < n; ++i) {
