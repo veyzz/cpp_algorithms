@@ -6,7 +6,7 @@ int get_pos(std::vector<int> const & arr, int element) {
     int end = arr.size() - 1;
     int mid;
     while (begin <= end) {
-        mid = begin + (begin - end) / 2;
+        mid = begin + (end - begin) / 2;
         if (arr[mid] == element) {
             return mid + 1;
         }
@@ -33,5 +33,5 @@ int main() {
         std::cout << get_pos(arr, element) << " ";
     }
     std::cout << std::endl;
-	return 0;
+    return 0;
 }
