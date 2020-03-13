@@ -3,18 +3,6 @@
 #include <iomanip>
 
 struct Item {
-    explicit Item() {
-        this->cost = 0;
-        this->weight = 0;
-        this->prop = 0;
-    }
-
-    explicit Item(int cost, int weight) {
-        this->cost = cost;
-        this->weight = weight;
-        this->prop = (double)cost / weight;
-    }
-
     int cost;
     int weight;
     double prop;
@@ -28,10 +16,9 @@ int main() {
     int n, W;
     std::cin >> n >> W;
     Item arr[n];
-    int ci, wi;
     for (int i = 0; i < n; ++i) {
-        std::cin >> ci >> wi;
-        arr[i] = Item(ci, wi);
+        std::cin >> arr[i].cost >> arr[i].weight;
+        arr[i].prop = (double)arr[i].cost / arr[i].weight;
     }
 
     std::sort(arr, arr + n, comp);
@@ -50,5 +37,5 @@ int main() {
         ++i;
     }
     std::cout << std::fixed << std::setprecision(3) << max_cost << std::endl;
-	return 0;
+    return 0;
 }
