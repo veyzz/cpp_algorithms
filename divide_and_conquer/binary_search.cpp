@@ -3,10 +3,10 @@
 
 int get_pos(std::vector<int> const & arr, int element) {
     int begin = 0;
-    int end = arr.size();
+    int end = arr.size() - 1;
     int mid;
     while (begin <= end) {
-        mid = (begin + end) / 2;
+        mid = begin + (begin - end) / 2;
         if (arr[mid] == element) {
             return mid + 1;
         }
