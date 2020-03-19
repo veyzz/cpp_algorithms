@@ -14,7 +14,6 @@ void c_sort(std::vector<int> & arr) {
     for (int i = n - 1; i >= 0; --i) {
         temp[--count[arr[i]]] = arr[i];
     }
-    std::cout << std::endl;
     arr = std::move(temp);
 }
 
