@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-int max_weight(int W, std::vector<int> gold_bars) {
+int max_weight(int W, std::vector<int> const & gold_bars) {
     int n = gold_bars.size();
     std::vector<std::vector<int> > D(W + 1, std::vector<int>(n));
     for (int i = 0; i < n; ++i) {
